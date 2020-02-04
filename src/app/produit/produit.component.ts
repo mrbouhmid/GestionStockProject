@@ -13,7 +13,9 @@ export class ProduitComponent implements OnInit {
   constructor(private produitService : ProduitMockService ) { }
 
   ngOnInit() {
-    this.produits = this.produitService.PRODUITS;
+    this.produitService.getProduits().subscribe(
+      (produits : Produit[] ) => { this.produits = produits ; console.log(this.produits)}
+    );
   }
 
 }
