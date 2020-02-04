@@ -19,6 +19,10 @@ export class ProduitMockService {
     return this.http.get<Produit[]>(this.url, {headers : this.headers});
   }
 
+  onSelectProduit(data : Produit) {
+    return this.http.get<Produit>(this.url, {headers : this.headers});
+  }
+
   constructor(private http : HttpClient) { 
 
     /*this.getProduits().subscribe(
